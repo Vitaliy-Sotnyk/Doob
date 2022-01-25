@@ -4,7 +4,7 @@
     margin-top: 190px;
 }
 .portfolio_block h2{
-    width: 390px;
+    max-width: 390px;
     padding-bottom: 90px;
 }
 .portfolio_block .img{

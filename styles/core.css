@@ -7,10 +7,12 @@
     --red-color: rgb(255, 57, 70);
 
     font-size: 18px;
-    font-family: "Work Sans";
+    font-family: "Franklin Gothic";
     color: var(--main-color);
-    font-weight: 600;
+    font-weight: 500;
+    font-stretch: ultra-expanded;
     line-height: 21px;
+
 }
     
 a{

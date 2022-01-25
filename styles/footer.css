@@ -27,7 +27,7 @@ footer{
 .footer_block a{
     color: var( --white-color); 
 }
-.footer_block .Doob_All_R{
+.footer_block .doob_all_r{
     color: var(--white-color);
     font-size: 14px;
     font-weight: normal;
