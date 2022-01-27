@@ -148,7 +148,7 @@ let animation = setInterval(function(){
         } 
     }
     iterration = !iterration;
-}, 3000);
+}, 6000);
 
 showSlides(slideIndex);
 
@@ -156,12 +156,12 @@ function currentSlide(n) {
     pause = true;
     setTimeout(function(){
         pause = false;
-    }, 5000)
+    }, 8000)
     showSlides(slideIndex = n);
     setTimeout(function(){
         dots[slideIndex - 1].className = dots[slideIndex - 1].className.replace(' '+'active', '');
         dots[slideIndex].className = dots[slideIndex].className.replace(' '+'active', '');
-    }, 8000)
+    }, 14000)
 }
 
 function showSlides(n) {
