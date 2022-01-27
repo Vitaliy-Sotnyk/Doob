@@ -125,27 +125,61 @@ function language(array){
 /*----------Slider----------*/
 let slides = document.getElementsByClassName('item');
 let dots = document.getElementsByClassName('slider-dots_item');
-let slideIndex = 1;
+let slideIndex=1;
+let iterration = true;
+let pause = false;
+let bool;
+let animation = setInterval(function(){
+    if(pause==false){
+        if(slideIndex === 2){
+            slideIndex--;
+            iterration===true
+        }
+        if(iterration===true){
+            slides[slideIndex - 1].style.display = 'none';
+            dots[slideIndex - 1].className = dots[slideIndex - 1].className.replace(' '+'active', '');
+            slides[slideIndex].style.display = 'flex';
+            dots[slideIndex].className += ' '+'active';
+        } else if(iterration===false){
+            slides[slideIndex - 1].style.display = 'flex';
+            dots[slideIndex - 1].className += ' '+'active';
+            slides[slideIndex].style.display = 'none';
+            dots[slideIndex].className = dots[slideIndex].className.replace(' '+'active', '');
+        } 
+    }
+    iterration = !iterration;
+}, 3000);
+
 showSlides(slideIndex);
 
 function currentSlide(n) {
+    pause = true;
+    setTimeout(function(){
+        pause = false;
+    }, 5000)
     showSlides(slideIndex = n);
+    setTimeout(function(){
+        dots[slideIndex - 1].className = dots[slideIndex - 1].className.replace(' '+'active', '');
+        dots[slideIndex].className = dots[slideIndex].className.replace(' '+'active', '');
+    }, 8000)
 }
 
 function showSlides(n) {
- if (n > slides.length) {
-      slideIndex = 1
+    if (n > slides.length) {
+        slideIndex = 1;
     }
     if (n < 1) {
-        slideIndex = slides.length
+        slideIndex = slides.length;
     }
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = 'none';
     }
     for (let i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(' active', '');
+        dots[i].className = dots[i].className.replace(' '+'active', '');
     }
     slides[slideIndex - 1].style.display = 'flex';
-    dots[slideIndex - 1].className += ' active';
+    dots[slideIndex-1].className += ' '+'active';
 }
 /*----------Slider----------*/
+/*
+*/
